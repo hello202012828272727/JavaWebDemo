@@ -1,6 +1,10 @@
 package com.qiuxue.service;
 
 import com.qiuxue.pojo.PageBean;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.time.LocalDate;
+import java.util.List;
 
 /**
  * 员工管理
@@ -12,5 +16,11 @@ public interface EmpService {
      * @param pageSize
      * @return
      */
-    PageBean page(Integer page, Integer pageSize);
+    PageBean page(Integer page, Integer pageSize,String name, Short gender, LocalDate begin, LocalDate end);
+
+    /**
+     * 删除员工操作
+     * @param ids
+     */
+    void delete(List<Integer> ids);
 }
